@@ -1,116 +1,177 @@
+/* 
+=============================================================================
+PROJECT: Professional Developer CV / Resume
+THEME: Dracula Dark Mode (High Contrast)
+TYPOGRAPHY: JetBrains Mono (Monospace for 'Code' feel)
+Цей файл містить стилі для оформлення резюме у форматі A4.
+Використовується CSS Grid та Flexbox для чіткої структуризації контенту.
+=============================================================================
+ */
+
+/* --- External Typography / Підключення шрифтів --- */
+/* JetBrains Mono: забезпечує високу читабельність */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* --- Global Reset / Базове скидання стилів --- */
+* { 
+    box-sizing: border-box; /* Elements include padding/border in their width/height */
+    margin: 0; 
+    padding: 0; 
+}
 
+/* --- Document Body / Загальні налаштування сторінки --- */
 body {
-    background: #1e1f29;
+    background: rgb(30, 31, 41); /* Dark grey-blue foundation */
     font-family: 'JetBrains Mono', monospace;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the CV sheet horizontally */
     padding: 40px 20px;
+    -webkit-font-smoothing: antialiased; /* Покращення відображення шрифтів */
 }
 
+/* --- Main CV Sheet / Основний аркуш резюме --- */
 .cv {
-width: 210mm;
-min-height: 297mm;
-background: #282a36;
-padding: 50px 60px;
-box-shadow: 0 4px 60px rgba(0,0,0,0.5);
-    }
+    width: 210mm; /* Standard A4 Width */
+    min-height: 297mm; /* Standard A4 Height */
+    background: rgb(40, 42, 54); /* Slightly lighter than body for depth */
+    padding: 50px 60px;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.5); /* Soft shadow for "paper" effect */
+    color: rgb(248, 248, 242); /* Default text color */
+}
 
-/* Header */
+/* --- Header Section (Name & Role) / Шапка резюме --- */
 .cv__name {
-font-size: 2rem;
-font-weight: 700;
-color: #ff79c6;
-    }
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(255, 121, 198); /* Dracula Pink accent */
+    letter-spacing: -0.5px;
+}
 
 .cv__role {
-font-size: 0.85rem;
-font-weight: 300;
-color: #bd93f9;
-margin-top: 4px;
-    }
+    font-size: 0.85rem;
+    font-weight: 300;
+    text-transform: uppercase; /* Робимо роль більш офіційною */
+    color: rgb(189, 147, 249); /* Dracula Purple accent */
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
 
+/* --- Contact Bar / Контактна інформація --- */
 .cv__contacts {
-display: flex;
-flex-wrap: wrap;
-gap: 6px 28px;
-margin-top: 14px;
-padding-bottom: 16px;
-border-bottom: 1px solid rgba(98,114,164,0.4);
-    }
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 6px 28px;
+    margin-top: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(98,114,164,0.4); /* Subtle separator line */
+}
 
 .cv__contacts li {
-list-style: none;
-font-size: 0.75rem;
-color: #a9b1d6;
+    list-style: none; /* Remove default bullets */
+    font-size: 0.75rem;
+    color: rgb(169, 177, 214); /* Muted blue-grey */
 }
 
-.cv__contacts li span { color: #6272a4; margin-right: 5px; }
-.cv__contacts a { color: #a9b1d6; text-decoration: none; }
-.cv__contacts a:hover { color: #f8f8f2; }
+/* Style for icons or labels before contact data */
+.cv__contacts li span { 
+    color: rgb(98, 114, 164); /* Comments color from Dracula palette */
+    margin-right: 5px; 
+}
 
-/* Summary */
+.cv__contacts a { 
+    color: rgb(169, 177, 214); 
+    text-decoration: none; 
+    transition: color 0.2s ease; /* Плавний перехід кольору */
+}
+
+.cv__contacts a:hover { 
+    color: rgb(248, 248, 242); /* Brighten text on hover */
+}
+
+/* --- Professional Summary / Про себе --- */
 .cv__summary {
-margin: 20px 0;
-font-size: 0.8rem;
-color: #a9b1d6;
-line-height: 1.75;
+    margin: 20px 0;
+    font-size: 0.8rem;
+    color: rgb(169, 177, 214);
+    line-height: 1.75; /* Increased leading for better readability */
+    text-align: justify; /* Вирівнювання по ширині для блоку тексту */
 }
 
-/* Section */
-.cv-section { margin-top: 24px; }
+/* --- Sections Styling / Стилізація блоків (Досвід, Освіта тощо) --- */
+.cv-section { 
+    margin-top: 24px; 
+}
 
 .cv-section__title {
-font-size: 1rem;
-font-weight: 700;
-color: #bd93f9;
-padding-bottom: 6px;
-border-bottom: 1px solid rgba(98,114,164,0.4);
-margin-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(189, 147, 249);
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(98,114,164,0.4);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
 }
 
-/* Skills grid */
+/* --- Skills Grid / Сітка навичок --- */
 .skills-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 6px 16px;
-list-style: none;
+    display: grid;
+    /* Divide the area into 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 6px 16px;
+    list-style: none;
 }
 
 .skills-grid li {
-font-size: 0.78rem;
-color: #a9b1d6;
-line-height: 1.7;
+    font-size: 0.78rem;
+    color: rgb(169, 177, 214);
+    line-height: 1.7;
 }
 
-.skills-grid li::before { content: "• "; color: #6272a4; }
+/* Custom bullet point using pseudo-element / Кастомний маркер списку */
+.skills-grid li::before { 
+    content: "• "; 
+    color: rgb(98, 114, 164); 
+}
 
-/* Competencies */
+/* --- Competency & Experience Lists / Списки компетенцій --- */
 .competency-list {
-list-style: none;
-padding-left: 14px;
-display: flex;
-flex-direction: column;
-gap: 8px;
+    list-style: none;
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .competency-list li {
-font-size: 0.78rem;
-color: #a9b1d6;
-line-height: 1.65;
+    font-size: 0.78rem;
+    color: rgb(169, 177, 214);
+    line-height: 1.65;
 }
 
-.accent { font-weight: 700; color: #50fa7b; }
+/* --- Accent Colors / Кольорові акценти для виділення важливого --- */
+.accent { 
+    font-weight: 700; 
+    color: rgb(80, 250, 123); /* Dracula Green: used for highlights or positive status */
+}
 
-/* Languages */
+/* --- Languages Section / Блок знання мов --- */
 .lang-list {
-display: flex;
-gap: 24px;
-flex-wrap: wrap;
-list-style: none;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    list-style: none;
 }
 
-.lang-list li { font-size: 0.78rem; color: #a9b1d6; }
-.lang-list li span { color: #6272a4; margin-left: 6px; font-size: 0.7rem; }
+.lang-list li { 
+    font-size: 0.78rem; 
+    color: rgb(169, 177, 214); 
+}
+
+/* Level of proficiency (e.g., B2, C1) styling */
+.lang-list li span { 
+    color: rgb(98, 114, 164); 
+    margin-left: 6px; 
+    font-size: 0.7rem; 
+    font-style: italic; /* Курсив для позначення рівня */
+}
