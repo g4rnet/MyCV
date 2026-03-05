@@ -59,8 +59,6 @@ git clone https://github.com/your-username/cv-makarenko.git
 open index.html
 ```
 
-To **export as PDF**: open in any browser → `Ctrl+P` / `Cmd+P` → Save as PDF.
-
 ---
 
 ### ✦ Preview
