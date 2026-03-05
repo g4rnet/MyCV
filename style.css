@@ -1,5 +1,5 @@
 body {
-    background-color: #282a36; /* фон */
+    background-color: rgb(40, 42, 54); /* фон */
     font-family: 'JetBrains Mono', monospace; /* шрифт */
     margin: 0.2; /* отступы */
 }
@@ -25,31 +25,33 @@ body {
 
 /* основной текст в правой части */
 .right-side p {
-    color: #a9b1d6;
+    color: rgb(169, 177, 214);
     line-height: 1.5; /* интервалы для читабельности */
     text-shadow: 0 0 5px rgba(169, 177, 214, 0.3); /* легкий эффект свечения */
 }
 
 /* текст в левой части */
 .left-side p {
-    color: #9ece6a;
+    color: rgb(158, 206, 106);
     font-weight: 300; /* толщина текста */
 }
 
 /* имитация выделения в терминале */
 p:hover {
-    color: #f8f8f2; /* текст становится ярче */
+    color: rgb(248, 248, 242); /* текст становится ярче */
 }
 
-h1 { color: #ff79c6; } /* <CV> */
+h1 { 
+    color: rgb(255, 121, 198);
+} /* <CV> */
 
 h2 { 
-    color: #bd93f9; /* для имени и разделов { } */
+    color: rgb(189, 147, 249); /* для имени и разделов { } */
     font-size: 1.2rem;
 }
 
 h3 { 
-    color: #6272a4; /* для // */
+    color: rgb(98, 114, 164); /* для // */
     margin-top: 20px;
 }
 
@@ -57,10 +59,10 @@ h3 {
 p { 
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #f8f8f2;
+    color: rgb(248, 248, 242);
 }
 
 /* $, <> и жирный текст */
 strong { 
-    color: #50fa7b; /* Неоново-зеленый для ключевых слов */
+    color: rgb(80, 250, 123); /* Неоново-зеленый для ключевых слов */
 }
