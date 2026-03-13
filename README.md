@@ -119,7 +119,7 @@ open index.html
 
 ```bash
 # Клонуємо репозиторій
-git clone https://github.com/your-username/cv-makarenko.git
+git clone https://github.com/g4rnet/MyCV
 
 # Відкриваємо прямо у браузері — сервер не потрібен
 open index.html
